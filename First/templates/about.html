@@ -1,17 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Document</title>
-</head>
-<body>
+
     <h1>
         about page 
     </h1>
-</body>
-</html>
+<p>
+    {{my_text}},
+    {{my_number}},
+    {{my_list}}
+</p>
+<ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
 
+<ul>
+{% for my_sub_item in my_list %}
 
+    {% if my_sub_item == 1 %}
+
+        <li>{{my_sub_item}} {{"one"}}</li>
+
+    {% elif my_sub_item == 2 %}
+        <li>{{my_sub_item}} {{"two"}}</li>
+
+    {% else %}
+    <li>{{my_sub_item}} {{"other"}}</li>
+    
+    {% endif %}
+
+{% endfor %}
+</ul>
 {% endblock content%}
