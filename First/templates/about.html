@@ -3,7 +3,7 @@
 {% block content %}
 
     <h1>
-        about page 
+        {{title|capfirst}}
     </h1>
 <p>
     {{my_text}},
@@ -28,7 +28,7 @@
 
     {% else %}
     <li>{{my_sub_item}} {{"other"}}</li>
-    
+
     {% endif %}
 
 {% endfor %}
